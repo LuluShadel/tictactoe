@@ -55,7 +55,7 @@ class Board extends React.Component {
     render() {
       const winner = calculateWinner(this.state.squares);
   let status;
-  let statusClassName = "mb-6 font-bold";
+  let statusClassName = "mb-6 font-bold text-lg";
   let currentPlayerClassName = this.state.xIsNext ? "text-orange-500" : "text-blue-500";
 
   if (winner) {

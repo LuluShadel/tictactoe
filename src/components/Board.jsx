@@ -61,7 +61,11 @@ class Board extends React.Component {
   if (winner) {
     const winningPlayerClassName = winner === "X" ? "text-orange-500" : "text-blue-500";
     status = <span className={winningPlayerClassName}>Gagnant: {winner}</span>;
-  } else {
+  } else if( this.state.squares.every((square)=>square !== null)){
+    status = <span className="text-gray-500">Match nul !</span>;
+  }
+  
+  else {
     const nextPlayer = this.state.xIsNext ? <span className={currentPlayerClassName}>X</span> : <span className={currentPlayerClassName}>O</span>;
     status = <>Prochain Joueur: {nextPlayer}</>;
   }
